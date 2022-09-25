@@ -1,0 +1,25 @@
+Run                      Ctrl+F5
+
+Show Solution Explorer   Ctrl+Alt+L
+
+Add Class                Shift+Alt+C
+
+Build                    Ctrl+Shift+B
+
+Breakpoint               F9
+Run in Debug Mode        F5  (Or continue to next Breakpoint)
+Step Over                F10 (Run next line of code)
+Step Into                F11 (Step into a method)
+Step Out                 Shift+F11
+Stop Debugging           Shift+F5
+Delete all Breakpoints   Ctrl+Shift+F9
+Restart                  Ctrl+Shift+F5
+
+Watch Window             Ctrl+D,W
+CallStack Window         Ctrl+D,C
+Autos                    Ctrl+D,A
+Locals                   Ctrl+D,L
+
+
+Summarizing Text
+Procedural Programming

@@ -1,0 +1,259 @@
+Classes
+
+-Need to add another class with Shift+Alt+C
+
+    ---------------New Class Code---------------
+
+    class Person
+    {
+        public string Name;
+        public int Age;
+
+        public void Introduce()
+        {
+            Console.WriteLine("My name is " + Name + " and I'm " + Age + " years old.");
+        }
+    }
+	
+    -------Main Class Code-----------------------
+
+        static void Main(string[] args)
+        {
+            var Dan = new Person();
+            Dan.Name = "Danger";
+            Dan.Age = 28;
+            Dan.Introduce();
+        }
+		
+---------------------------------------------------------------------------------------------------
+Enums (Creating an enum and assign his value to a string)
+
+        enum Console
+        {
+            PlayStation,
+            Xbox,
+            Nintendo
+        }
+        static void Main(string[] args)
+        {
+            var myConsole = Console.PlayStation;
+        }
+	
+-----------------------------------------------------------------------------------------------------
+Conditional Opperator (short if statement with ? and :)
+
+            bool isGoldCustomer = true;
+            int price = (isGoldCustomer) ? 10 : 20;
+			
+------------------------------------------------------------------------------------------------------
+String Format
+
+            var age = 28;
+            var year = 1994;
+            Console.WriteLine(string.Format("I have {0} years old, I was born in {1}", age, year));
+			
+--------------------------------------------------------------------------------------------------------
+For Loop (Simple use of for loop to find some even numbers)
+
+            var count = 0;
+            for (int i = 1; i <=50; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    count++;
+                }
+            }
+            Console.Write(count);
+			
+-----------------------------------------------------------------------------------------------------------
+While Loop (basic use of while loop and his keywords)
+
+            while (true)
+            {
+                var x = 1;
+                if (x == 1)
+                    break;  //Get Out of the Loop
+                if (x == 1)
+                    continue; //Restart the loop
+                if (x == 1)
+                    return; //You typically use the return statement without expression to terminate a function member early
+            }
+			
+---------------------------------------------------------------------------------------------------------
+Random (create a random number)
+
+            var random = new Random();
+            var number = random.Next(1, 10);
+			
+------------------------------------------------------------------------------------------------------------
+Check input for lower letters
+
+            string input = "ok";
+            if (input.ToLower() == "ok")
+			
+----------------------------------------------------------------------------------------------------------
+Factorial (find the factorial of a number)
+
+            var factorial = 1;
+            var number = 5;
+            for (int i = factorial; i <= number; i++)
+            {
+                factorial *= i;
+            }
+			
+-----------------------------------------------------------------------------------------------------------
+Split (store a string containing numbers and ',' into a string array without ',')
+
+            var input = Console.ReadLine();
+            var numbers = input.Split(',');
+			
+---------------------------------------------------------------------------------------------------------
+Create a new variable inside the foreach loop to convert an element (when you can't do it directly) 
+
+            var max = Convert.ToInt32(numbers[0]);
+
+            foreach (var str in numbers)
+            {
+                var number = Convert.ToInt32(str);   //////Important line of code
+                if (number > max)
+                    max = number;
+            }
+			
+-------------------------------------------------------------------------------------------------
+Storing an char array into a string
+
+var reversedName = new string(name);
+
+-------------------------------------------------------------------------------------------------
+Date and time
+
+            var dateTime = new DateTime (2022, 09, 22);  //Create a new date
+            var now = DateTime.Now;                      //Get current time
+            var today = DateTime.Today;                  //Get current date
+			now.hour           //current hour
+			now.minute         //current minute
+			var tomorrow = now.AddDays(1);               //Add days function
+			var yesterday = now.AddDays(-1);             //Add days function
+			
+            Console.WriteLine(now.ToLongDateString());              // joi, 22 septembrie 2022
+            Console.WriteLine(now.ToShortDateString());             // 22.09.2022
+            Console.WriteLine(now.ToLongTimeString());              // 18:23:21
+            Console.WriteLine(now.ToShortTimeString());             // 18:23
+            Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));    // 2022-09-22 18:23
+			
+            var timeSpan = new TimeSpan(1, 2, 3);        // Hours, Minutes, Seconds
+            var timeSpan2 = TimeSpan.FromHours(2);       // Works with days too
+			timeSpan.Minutes           // 2
+			timeSpan.TotalMinutes      // 62.03
+			timeSpan.Add(TimeSpan.FromMinutes(8));       // (1, 10, 3)
+			timeSpan.Subtract(TimeSpan.FromMinutes(2));       // (1, 0, 3)
+			timeSpan.ToString();
+			timeSpan.Parse("01:02:03");
+			
+-----------------------------------------------------------------------------------------------------
+Working with Text
+
+            var fullName = "Dan Pandele ";
+            Console.WriteLine("Trim: '{0}'", fullName.Trim());  //Removes White Spaces from beginning and end of the string
+            Console.WriteLine("ToUpper: '{0}'", fullName.Trim().ToUpper());  //Converts the string to UpperCase
+			
+            var index = fullName.IndexOf(' ');             //Get the index in the middle for separation
+            var firstName = fullName.Substring(0, index);  //Start from first index and end on specified index
+            var lastName = fullName.Substring(index + 1);  //Start from 1 letter after the specified index
+			
+			var names = fullName.Split(' ');               //Split full name into a string array with both names (same result as above)
+            fullName.Replace("Dan", "Daniel");             //Replaces characters in the string
+			
+			String.IsNullOrWhiteSpace(" ");                //Verify if string is empty or have space characters
+			
+            float price = 29.95f;
+            price.ToString("G");                           //Convert float to string with regular value
+            price.ToString("C");                           //Convert float to currency
+            price.ToString("C0");                          //Convert float to currency with no letter after comma
+            price.ToString("C1");                          //Convert float to currency with one letter after comma
+			
+----------------------------------------------------------------------------------------------------------------------------
+String Builder
+
+using System.Text;
+
+            var builder = new StringBuilder("Hello World");       //Create a new String Builder
+            builder.Append('-', 10);                              //Adds a series of characters of a given number
+            builder.AppendLine();                                 //End the line of characters to start a new one
+            builder.Replace('-', '+');                            //Replace certain characters with others
+            builder.Remove(0, 10);                                //Remove characters from starting index to next index
+            builder.Insert(0, new string('-', 10));               //Insert at the given index a certain string
+			builder[0];                                           //Get the first character of the string builder
+			
+--------------------------------------------------------------------------------------------------------------------------------
+Sort a list 
+
+			numbers.Sort();
+			
+--------------------------------------------------------------------------------------------------------------------------------
+Declare a list with an array
+
+			var vowels = new List<char>(new char[] {'a', 'e', 'o', 'u', 'i'});
+			
+---------------------------------------------------------------------------------------------------------------------------
+Procedural Programming
+
+        public static void Main(string[] args)
+        {
+            Console.Write("Enter your name");
+            var name = "Dan";
+            var reversed = ReverseName(name);
+            Console.WriteLine("Reversed name: " + reversed);
+        }
+        public static string ReverseName(string word)
+        {
+            var reversed = "Ger";
+            return reversed;
+        }
+		
+-----------------------------------------------------------------------------------------------------------------------------------
+Working with Files
+
+using System.IO;
+
+            var file = @"C:\Users\dange\Downloads\c#.png";                                               //Get a file path
+			File.Copy(@"C:\Users\dange\Downloads\c#.png", @"C:\Users\dange\Desktop\myfile.png", true);   //Copy file to target dirrectory, replace file with same name
+            File.Delete(file);                                                                           //Delete file from path            
+            if (File.Exists(file))                                                                       //Check if file exists
+            { 
+                  //Do Something with file
+            }
+			var content = File.ReadAllText(file);                                                        //Get file info
+			
+            var fileInfo = new FileInfo(file);                                                           //Create a file path for multiple uses
+            fileInfo.CopyTo(@"C:\Users\dange\Desktop\myfile.png", true);                                 //same as above.....
+            fileInfo.Delete();
+            if (fileInfo.Exists)
+            {
+
+            }
+			
+            Directory.CreateDirectory(@"C:\Users\dange\Desktop\New Folder 1");                             //Create a new folder
+			
+			
+            var files = Directory.GetFiles(@"G:\Danger\Videos", "*.mp4", SearchOption.AllDirectories);     //Find all mp4 files at given path
+
+            foreach(var file in files)
+            {
+                Console.WriteLine(file);                                                                   //Show them on the console
+            }
+			
+            var directories = Directory.GetDirectories(@"G:\Danger", "*.*", SearchOption.AllDirectories);  //Find all folders at given path
+			
+			
+			
+            Path.GetExtension(file);                                   //Get the extension of your file
+            Path.GetFileName(file);                                    //Get the name of your file
+            Path.GetFileNameWithoutExtension(file);                    //Get the name without extension
+            Path.GetDirectoryName(file);                               //Get the directory name of your file
+			
+--------------------------------------------------------------------------------------------------------------------------------------
+Display error message and stop program from advancing
+
+			if (count > list.Count || count <= 0)
+				throw new ArgumentOutOfRangeException("count", "Error Message");
