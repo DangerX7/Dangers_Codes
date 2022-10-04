@@ -1,0 +1,36 @@
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var input = 2;
+            Accounts.GetSold(input);
+            var cash = 200;
+            Accounts.DepositMoney(input, cash);
+        }
+    }
+	
+	
+	public static class Accounts
+    {
+        static List<int> idList = new List<int>() { 1, 2, 3 };
+        static List<string> nameList = new List<string>() { "Daniel", "George", "Mihai" };
+        static List<int> soldList = new List<int>() { 1000, 2000, 800 };
+
+        static string SecondName = nameList.ElementAt(1);
+
+        public static void GetSold(int ID)
+        {
+            var name = nameList.ElementAt(ID);
+            var sold = soldList.ElementAt(ID);
+            Console.WriteLine(name + " balance is " + sold + " ron");
+        }
+
+        public static int DepositMoney(int ID, int sum)
+        {
+            var name = nameList.ElementAt(ID);
+            var sold = soldList.ElementAt(ID);
+            sold += sum;
+            Console.WriteLine(name + " balance is " + sold + " ron");
+            return sold;
+        }
+    }
